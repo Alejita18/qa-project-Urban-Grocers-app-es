@@ -32,4 +32,4 @@ Se desarrollaron 9 pruebas, siguiendo la lista de comprobaciones:
 6. **Nombre vacio**: verifica que un kit con nombre vacio no sea aceptado.
 7. **Nombre excede el limite (512 caracteres)**: verifica que un kit con nombre superior a 511 caracteres no sea aceptado.
 8. **Parametro 'name' no se pasa en la solicitud**: verifica que la ausencia de ccaracteres en el campo 'name' no sea aceptado.
-9. **Tipo de dato incorrecto para 'name'**: verifica que un nombre de kit con tipo de dato incorrecto(ejemplo, números) no sea aceptado.
+9. **Tipo de dato incorrecto para 'name'**: verifica que un nombre de kit con tipo de dato incorrecto(ejemplo, números) no sea aceptado...
