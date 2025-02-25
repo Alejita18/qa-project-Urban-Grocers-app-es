@@ -18,3 +18,5 @@ def post_new_client_kit(kit_body):
     return requests.post(configuration.URL_SERVICE + configuration.CREATE_KITS,
                          json=kit_body,
                          headers=current_headers)
+
+
