@@ -33,3 +33,25 @@ Se desarrollaron 9 pruebas, siguiendo la lista de comprobaciones:
 7. **Nombre excede el limite (512 caracteres)**: verifica que un kit con nombre superior a 511 caracteres no sea aceptado.
 8. **Parametro 'name' no se pasa en la solicitud**: verifica que la ausencia de ccaracteres en el campo 'name' no sea aceptado.
 9. **Tipo de dato incorrecto para 'name'**: verifica que un nombre de kit con tipo de dato incorrecto(ejemplo, números) no sea aceptado...
+
+## Cambios realizados para la ejecución de pruebas
+
+Para permitir que las pruebas sean ejecutadas en la terminal con PyTest, realicé los siguientes pasos:
+
+1. **Instalación de PyTest**:
+   Agregué PyTest como dependencia del proyecto. Esto asegura que cualquier persona que trabaje en el proyecto pueda instalarlo y ejecutarlo de forma sencilla. Para instalar PyTest, se utiliza el siguiente comando:
+   
+   ```bash
+   pip install pytest
+
+2. **Estructura de archivos de prueba**:
+   Organicé las pruebas en archivos cuyo nombre comienza con `test_` o termina con `_test.py`, que es la convención de PyTest para identificar archivos que contienen pruebas. Además, estas pruebas están ubicadas en una carpeta específica dentro del proyecto (por ejemplo, `tests/`), lo que facilita su ejecución.
+
+3. **Comando para ejecutar las pruebas**:
+   Para ejecutar todas las pruebas del proyecto, se debe usar el siguiente comando en la terminal:
+
+   ```bash
+   pytes
+
+4. **Resultados de las pruebas**:
+5. Al ejecutar las pruebas, PyTest mostrará un resumen en la terminal indicando qué pruebas pasaron, cuáles fallaron y proporcionará detalles sobre los errores encontrados si alguna prueba falla.

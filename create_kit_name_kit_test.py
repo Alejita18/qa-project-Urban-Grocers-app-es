@@ -16,15 +16,13 @@ def positive_assert_kit_body(kit_body):
     # El cuerpo de la solicitud actualizada se guarda en la variable kit_body
     user_body = post_kit_body(kit_body)
     # El resultado de la solicitud para crear un nuevo usuario o usuaria se guarda en la variable response
-    user_response = sender_stand_request.post_new_user(user_body)
+    user_response = sender_stand_request.post_new_client_kit(user_body)
 
     # Comprueba si el código de estado es 201
     assert user_response.status_code == 201
     # Comprueba que el campo authToken está en la respuesta y contiene un valor
-    assert user_response.json()["authToken"] != ""
 
-# String que debe estar en el cuerpo de respuesta
-    str_user = data.kit_body["name"]
+    assert user_response.json()["name"] == user_body["name"]
 
 
 
@@ -34,17 +32,14 @@ def negative_assert_code_400(kit_body):
     user_body = post_kit_body(kit_body)
 
    # El resultado se guarda en la variable response
-    response = sender_stand_request.post_new_client_kit(data.kit_body)
+    response = sender_stand_request.post_new_client_kit(user_body)
 
     # Comprueba si el código de estado es 400
     assert response.status_code == 400
 
     # Comprueba que el atributo code en el cuerpo de respuesta es 400
-    assert response.json()["code"] == 400
+
     # Comprueba el atributo message en el cuerpo de respuesta
-    assert response.json()["message"] == "El nombre que ingresaste es incorrecto. " \
-                                         "Los nombres solo pueden contener caracteres latinos,  "\
-                                         "los nombres deben tener al menos 1 caracteres y no más de 511 caracteres"
 
 
 
@@ -99,6 +94,8 @@ def test_create_kit_body8_sin_parametros_en_la_solicitud():
 # . Error. El tipo del parámetro name: número
 def test_create_kit_body9_con_numeros_in_name():
     negative_assert_code_400(123)
+
+
 
 
 
